@@ -1,24 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core';
+import { useContext } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { ThemeContext } from './components/themeContext';
 
-function App() {
+// elements
+import Navbar from './components/navbar';
+
+// pages
+import Home from './pages/home';
+import Projects from './pages/projects';
+import AboutMe from './pages/aboutMe';
+
+const navlinks = {
+    "Projects": "/projects",
+    "About Me": "/about_me"
+};
+
+function App(props) {
+  const theme = useContext(ThemeContext);
+
+  const styles = css`
+    background: ${theme.background};
+    color: ${theme.textColor};
+    main {
+      padding: 25px;
+      padding-top: 70px;
+    }
+  `;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div css={styles}>
+      <Navbar name="AWebsite" darkModeHandler={props.darkModeHandler} links={navlinks}/>
+      <main>
+        <Switch>
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route path="/projects">
+            <Projects/>
+          </Route>
+          <Route path="/about_me">
+            <AboutMe/>
+          </Route>
+          <Route path="*">
+            <h1> 404! </h1>
+            <h3> You are in the wrong place... </h3>
+          </Route>
+        </Switch>
+      </main>
     </div>
   );
 }
