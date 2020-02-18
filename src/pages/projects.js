@@ -5,9 +5,14 @@ import { useContext } from 'react';
 
 
 function Projects(props) {
+    const styles = css`
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    `;
 
     return (
-        <div>
+        <div css={styles}>
             <h1> - Projects - </h1>
             <h2> Programing Projects </h2>
                 <a href="https://github.com/wilmotha">GitHub</a>

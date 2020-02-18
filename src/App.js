@@ -17,6 +17,12 @@ const navlinks = {
     "About Me": "/about_me"
 };
 
+const navicons = {
+  "fa fa-linkedin": "https://www.linkedin.com/in/austin-wilmoth-566085150/",
+  "fa fa-github": "https://github.com/wilmotha",
+  "fa fa-soundcloud": "https://soundcloud.com/austin-wilmoth"
+}
+
 function App(props) {
   const theme = useContext(ThemeContext);
 
@@ -31,7 +37,7 @@ function App(props) {
 
   return (
     <div css={styles}>
-      <Navbar name="AWebsite" darkModeHandler={props.darkModeHandler} links={navlinks}/>
+      <Navbar name="AWebsite" darkModeHandler={props.darkModeHandler} links={navlinks} icons={navicons}/>
       <main>
         <Switch>
           <Route exact path="/">

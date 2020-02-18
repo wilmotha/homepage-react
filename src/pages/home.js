@@ -5,6 +5,10 @@ import { jsx, css } from '@emotion/core';
 
 function Home(props) {
     const styles = css`
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+
         img {
             width: 100%;
         }
