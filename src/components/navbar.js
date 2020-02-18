@@ -6,6 +6,7 @@ import { ThemeContext } from './themeContext';
 import HamburgerMenu from './navbarElements/HamburgerMenu';
 import SiteTitle from './navbarElements/SiteTitle';
 import NavBarLinks from './navbarElements/NavbarLinks';
+import NavBarIcons from './navbarElements/NavbarIcons';
 import DarkMode from './navbarElements/DarkMode';
 
 function NavBar(props) {
@@ -35,11 +36,11 @@ function NavBar(props) {
 
   return (
     <nav css={styles}>
-      <HamburgerMenu darkModeHandler={props.darkModeHandler} links={props.links}/>
+      <HamburgerMenu darkModeHandler={props.darkModeHandler} links={props.links} icons={props.icons}/>
       <SiteTitle name={props.name} style={title}/>
       <NavBarLinks links={props.links}/>
       <DarkMode darkModeHandler={props.darkModeHandler}/>
-      {/* <NavBarLinks links={{"Login": "/login"}}/> */}
+      <NavBarIcons links={props.icons}/>
     </nav>
   );
 }

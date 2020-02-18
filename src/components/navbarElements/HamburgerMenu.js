@@ -4,6 +4,7 @@ import { useState, useContext } from 'react';
 import { ThemeContext } from '../themeContext';
 
 import NavBarLinks from './NavbarLinks';
+import NavBarIcons from './NavbarIcons';
 import DarkMode from './DarkMode';
 
 function HamburgerMenu(props) {
@@ -76,7 +77,7 @@ function HamburgerMenu(props) {
           <div css={open ? openStyle : [css`opacity: 0; max-height: 0;`]}>
             <NavBarLinks links={props.links} /> 
             <DarkMode css={css`margin-left: auto; margin-left: initial;`} darkModeHandler={props.darkModeHandler} />
-            <NavBarLinks css={css`margin-left: auto; margin-left: initial;`} links={{"Login": "/login"}} />
+            <NavBarIcons css={css`margin-left: auto; margin-left: initial;`} links={props.icons} />
           </div>
           <button onClick={() => (setOpen(!open))}>{open ? '❮' : '☰'}</button>
         </div>
