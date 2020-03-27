@@ -11,9 +11,11 @@ import Navbar from './components/navbar';
 import Home from './pages/home';
 import Projects from './pages/projects';
 import AboutMe from './pages/aboutMe';
+import Blog from './pages/blog';
 
 const navlinks = {
     "Projects": "/projects",
+    "Blog": "/blog",
     "About Me": "/about_me"
 };
 
@@ -48,6 +50,9 @@ function App(props) {
           </Route>
           <Route path="/about_me">
             <AboutMe/>
+          </Route>
+          <Route>
+            <Blog/>
           </Route>
           <Route path="*">
             <h1> 404! </h1>
